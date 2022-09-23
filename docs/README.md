@@ -1,19 +1,23 @@
-# Robotic Voice Generator
-
-`Robotic voice generation` 
+# Documentation
 
 ## About the project
 
 Learn about the development of this project.
 
-### Build Environment
+### Voice robotic modulation
 
-For a first use, make sure you have installed the needed packages into your computer
+**Modulate** your robotic voice with the help of this python application.
 
+    Neural Voices alternative for simpler solutions.
 
+![Robotic voice generation](img/robot-voice-effect.jpg)
 
-![make build-venv demonstration](img/mp3.png)
+### Voice slight modification 
 
-## Documentation 
-Learn about the **technologies** involved in this project.
-- [Documentation](docs/)
+Modify the robotic voice with the help of the **OOP constructed object**.
+
+### Output selection
+
+Modify the output location of your voice generation
+
+![MP3 Logo](img/mp3.png)

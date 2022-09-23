@@ -1,6 +1,6 @@
 # Robotic Voice Generator
 
-`Robotic voice generation` 
+Automatic `Robotic voice generation` through the usage of **txt** files and single modifications of the python script.
 
 ## About the project
 
