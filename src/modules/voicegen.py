@@ -32,7 +32,18 @@ class RobVoiceGen():
 
     @text_script_conf.setter
     def text_script_conf(self, location:str):
-        self.current_text = self.os.path.join(self.os.path.dirname(__file__), location)
+        filepath = self.os.path.join(self.os.path.dirname(__file__), location)
+        with open(filepath, 'r') as file:
+            self.current_text = file.read()
+
+    @property
+    def voice_rate_conf(self)->float:
+        return self.engine.getProperty('rate')
+
+    @voice_rate_conf.setter
+    def voice_rate_conf(self, rate_value:float):
+        rate = self.engine.getProperty('rate')
+        self.engine.setProperty('rate', rate+rate_value)
 
     @property
     def voice_rate_conf(self)->float:
@@ -44,5 +55,5 @@ class RobVoiceGen():
         self.engine.setProperty('rate', rate+rate_value)
 
     def __del__(self):
-        self.engine.save_to_file('Hello World' , self.output_loc)
+        self.engine.save_to_file(self.current_text, self.output_loc)
         print("---\nCheck the outputs folder!\n")
