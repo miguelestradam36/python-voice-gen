@@ -5,7 +5,8 @@ class RobVoiceGen():
 
     output_loc = ''
     current_text = ''
-    
+    voice_gender = True # True being female
+
     def __init__(self):
         print("Starting voice conversion...")
         self.engine = self.pyttsx3.init()
@@ -15,8 +16,11 @@ class RobVoiceGen():
         return self.upload_file_state_
 
     @voice_conf.setter
-    def voice_conf(self, volume:int, gender:int, ):
+    def voice_conf(self, gender:int=1)->None:
+        if gender == 0:
+            self.voice_gender = False
         voices = self.engine.getProperty('voices')
+        self.engine.setProperty('voice', voices[gender].id)
 
     @property
     def output_conf(self)->str:
@@ -35,15 +39,6 @@ class RobVoiceGen():
         filepath = self.os.path.join(self.os.path.dirname(__file__), location)
         with open(filepath, 'r') as file:
             self.current_text = file.read()
-
-    @property
-    def voice_rate_conf(self)->float:
-        return self.engine.getProperty('rate')
-
-    @voice_rate_conf.setter
-    def voice_rate_conf(self, rate_value:float):
-        rate = self.engine.getProperty('rate')
-        self.engine.setProperty('rate', rate+rate_value)
 
     @property
     def voice_rate_conf(self)->float:
