@@ -82,5 +82,17 @@ class RobVoiceGen():
         except Exception as error:
             print("ERROR: {}".format(error))
 
+    def voices_try_out(self):
+        try:
+            voices = self.engine.getProperty('voices')
+            for voice in voices:
+                self.engine.setProperty('voice', voice.id)
+                self.engine.say('The quick brown fox jumped over the lazy dog.')
+                #self.engine.save_to_file(self.current_text, self.output_loc)
+            self.engine.runAndWait()
+            print("Trying all voices in current speech")
+        except Exception as error:
+            print("ERROR: {}".format(error))
+
     def __del__(self):
         print("---\nFinished audio conversion process!\n")
