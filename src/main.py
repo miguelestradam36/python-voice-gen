@@ -1,7 +1,5 @@
-from modules.voicegen import RobVoiceGen
-
 if __name__  == "__main__":
-
+    from modules.voicegen import RobVoiceGen
     buffer = RobVoiceGen()
     buffer.voice_conf = 0
     buffer.voice_rate_conf = -7
