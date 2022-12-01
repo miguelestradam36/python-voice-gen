@@ -25,5 +25,7 @@ jobs:
           python-version: '3.9'
       - name: Install dependencies
         run: python -m pip install --upgrade pip -r src/config/requirements.txt
+      - name: Install dependencies [Operating System]
+        run: apt-get update && apt-get install espeak
       - name: Run Script
         run: python src/main.py
