@@ -29,5 +29,7 @@ jobs:
         run: python -m pip install --upgrade pip -r src/config/requirements.txt
       - name: Test Build and Version
         run: pytest tests/
-      - name: Run Script
-        run: python src/main.py
+      - name: Change dir
+        run: cd src/
+      - name: Run code
+        run: python main.py
