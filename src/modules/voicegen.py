@@ -126,7 +126,9 @@ class RobVoiceGen():
         """
         try:
             rate = self.engine.getProperty('rate')
+            voices = self.engine.getProperty('voices')
             self.engine.setProperty('rate', rate+rate_value)
+            self.engine.setProperty('voice', voices[0].id)
             print("Voice current rate {}".format(rate+rate_value))
         except Exception as error:
             print("ERROR: {}".format(error))
