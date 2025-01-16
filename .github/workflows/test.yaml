@@ -30,6 +30,4 @@ jobs:
       - name: Test Build and Version
         run: pytest tests/
       - name: Change dir
-        run: cd src/
-      - name: Run code
-        run: python main.py
+        run: cd src/ && python main.py
